@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY Favourite</title>
+    <link rel="stylesheet" href="resource/css/style.css">
+    <link rel="stylesheet" href="resource/css/style4.css">
+
+   </head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="topnav">
+        <a href="index.html">Home</a>
+        <a href="aboutme.html">About Me</a>
+        <a href="myeducation.html">Education</a>
+        <a class="active" href="myfavourites.html">Favourites</a>
+        <a href="moments.html">Mymoments</a>
+        <a href="hometown.html">Hometown</a>
+        <a href="contactme.html">ContactMe</a>
+    </div>
+
+    <!-- Carousel -->
+    <div class="wrapper">
+        <button id="left" class="fas fa-angle-left">◀</button>
+        <ul class="carousel">
+            <li class="card">
+                <div class="img">
+                    <img src="resource/picture/zayne.jpg" alt="Love and Deepspace" draggable="false">
+                </div>
+                <h2 style="color: purple; font-weight: bold;">Love and Deepspace</h2>
+                <span>Zayne/Li Shen</span>
+            </li>
+            <li class="card">
+                <div class="img">
+                    <img src="resource/picture/flower knows.jpg" alt="Flower Knows" draggable="false">
+                </div>
+                <h2 style="color: purple; font-weight: bold;">Flower Knows</h2>
+                <span>little angel v2 collection</span>
+            </li>
+            <li class="card">
+                <div class="img">
+                    <img src="resource/picture/Costumes.jpg" alt="Hanfu" draggable="false">
+                </div>
+                <h2 style="color: purple; font-weight: bold;">Hanfu</h2>
+                <span>chinese ancient dress</span>
+            </li>
+            <li class="card">
+                <div class="img">
+                    <img src="resource/picture/Sanrio_all.jpg" alt="Sanrio" draggable="false">
+                </div>
+                <h2 style="color: purple; font-weight: bold;">Sanrio</h2>
+                <span>cute animals</span>
+            </li>
+            <li class="card">
+                <div class="img">
+                    <img src="resource/picture/precure.jpg" alt="Princess Precure" draggable="false">
+                </div>
+                <h2 style="color: purple; font-weight: bold;">Princess Precure</h2>
+                <span>precure series</span>
+            </li>
+            <li class="card">
+                <div class="img">
+                    <img src="resource/picture/Jewelpet.jpg" alt="Jewelpet" draggable="false">
+                </div>
+                <h2 style="color: purple; font-weight: bold;">Jewelpet</h2>
+                <span>same like sanrio but magical</span>
+            </li>
+            <li class="card">
+                <div class="img">
+                    <img src="resource/picture/genshin.jpg" alt="Genshin Impact" draggable="false">
+                </div>
+                <h2 style="color: purple; font-weight: bold;">Genshin Impact</h2>
+                <span>RPG game from mihoyo</span>
+            </li>
+            <li class="card">
+                <div class="img">
+                    <img src="resource/picture/Honkai_Star_Rail.jpg" alt="Honkai Star Rail" draggable="false">
+                </div>
+                <h2 style="color: purple; font-weight: bold;">Honkai Star Rail</h2>
+                <span>another RPG game from mihoyo but different</span>
+            </li>
+            <li class="card">
+                <div class="img">
+                    <img src="resource/picture/sanrio_danshi.jpg" alt="Sanrrio Boys" draggable="false">
+                </div>
+                <h2 style="color: purple; font-weight: bold;">Sanrio Boys</h2>
+                <span>Boys version that like sanrio</span>
+            </li>
+            <li class="card">
+                <div class="img">
+                    <img src="resource/picture/aespa.jpg" alt="Aespa" draggable="false">
+                </div>
+                <h2 style="color: purple; font-weight: bold;">Aespa</h2>
+                <span>SM girl group kpop</span>
+            </li>
+            <li class="card">
+                <div class="img">
+                    <img src="resource/picture/Plave.jpg" alt="Plave" draggable="false">
+                </div>
+                <h2 style="color: purple; font-weight: bold;">Plave</h2>
+                <span>Virtual kpop boy group</span>
+            </li>
+        </ul>
+        <button id="right" class="fas fa-angle-right">▶</button>
+    </div>
+
+    <!-- Footer -->
+    <div class="copyright-container">
+        <div class="vert-align">
+            <p class="headline">Copyright &copy; 2024 Priscilla Ann - All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <!-- JavaScript for Carousel -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.querySelector('.carousel');
+            const cards = document.querySelectorAll('.card');
+            const prevBtn = document.getElementById('left');
+            const nextBtn = document.getElementById('right');
+            let currentIndex = 0;
+
+            const updateCarousel = () => {
+                carousel.style.transform = `translateX(${-currentIndex * (carousel.offsetWidth / cards.length)}px)`;
+            };
+
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    currentIndex = cards.length - 1;
+                }
+                updateCarousel();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (currentIndex < cards.length - 1) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                }
+                updateCarousel();
+            });
+
+            // Drag functionality
+            let isDragging = false, startX, scrollLeft;
+
+            carousel.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                startX = e.pageX - carousel.offsetLeft;
+                scrollLeft = carousel.scrollLeft;
+            });
+
+            carousel.addEventListener('mouseleave', () => {
+                isDragging = false;
+            });
+
+            carousel.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+
+            carousel.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                const x = e.pageX - carousel.offsetLeft;
+                const walk = (x - startX) * 3; //scroll-fast
+                carousel.scrollLeft = scrollLeft - walk;
+            });
+        });
+    </script>
+</body>
+</html>

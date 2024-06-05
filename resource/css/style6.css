@@ -1,0 +1,121 @@
+     body {
+      margin: 0;
+      font-family: Algerian, Helvetica, sans-serif;
+      background: linear-gradient(to right, #ec2ca6, #f1e1ec);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    
+    .contact-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 20px;
+      flex: 1;
+    }
+
+    .contact-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .contact-left-title h2 {
+      font-weight: 600;
+      color: #b518b3;
+      font-size: 40px;
+      margin-bottom: 5px;
+    }
+
+    .contact-left-title hr {
+      border: none;
+      width: 120px;
+      height: 5px;
+      background-color: #a363aa;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .contact-inputs {
+      width: 400px;
+      height: 50px;
+      border: none;
+      outline: none;
+      padding-left: 25px;
+      font-weight: 500;
+      color: #666;
+      border-radius: 50px;
+    }
+
+    .contact-left textarea {
+      height: 140px;
+      padding-top: 15px;
+      border-radius: 20px;
+    }
+
+    .contact-inputs:focus {
+      border: 2px solid #ff994f;
+    }
+
+    .contact-input::placeholder {
+      color: #a9a9a9;
+    }
+
+    .contact-left button {
+      display: flex;
+      align-items: center;
+      padding: 15px 30px;
+      font-size: 16px;
+      color: #fff;
+      gap: 10px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      background-color: #ecc4de;
+    }
+
+    .contact-left button:hover {
+      background-color: #35c3c1;
+    }
+
+    .contact-right img {
+      width: 500px;
+      height: auto;
+    }
+
+    .social-icon {
+      color:  #06dce6;
+      font-size: 60px; /* Increase the size of the icon */
+      margin-top: 20px; /* Space between button and icon */
+      text-align: center;
+      display: block;
+    }
+
+    .social-icon:hover {
+      color: #333333;
+    }
+
+    @media (max-width: 800px) {
+      .contact-inputs {
+        width: 80vw;
+      }
+
+      .contact-right {
+        display: none;
+      }
+    }
+
+    .vert-align {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .headline {
+      margin: 0;
+    }
+

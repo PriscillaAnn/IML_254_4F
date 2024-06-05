@@ -1,0 +1,53 @@
+ .wrapper {
+            position: relative;
+            width: 80%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            gap: 16px;
+            transition: transform 0.5s ease-in-out;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .card {
+            min-width: 20%;
+            box-sizing: border-box;
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        #left, #right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        #left {
+            left: 10px;
+        }
+
+        #right {
+            right: 10px;
+        }
