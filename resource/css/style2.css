@@ -17,18 +17,19 @@
   font-size: 2em;
   font-weight: bold;
   color: #a569bd;
+  animation: slideIn 2s;
 }
 
 .subtitle {
   font-size: 1.2em;
   color: #ef8ec7;
-  animation: slideIn 2s;
+  animation: slideIn 3s;
 }
 
 .image-section {
   flex: 1;
   text-align: center;
-  animation: zoomIn 2s;
+  animation: zoomIn 4s;
   margin-top: -40px; /* Move the image up */
 }
 
