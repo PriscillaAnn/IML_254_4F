@@ -17,7 +17,7 @@
   font-size: 2em;
   font-weight: bold;
   color: #a569bd;
-  animation: slideIn 3s;
+  animation: slideIn 3s forwards; /* Ensure the animation completes and stays in the final state */
 }
 
 .subtitle {
