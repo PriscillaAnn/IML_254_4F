@@ -17,7 +17,7 @@
   font-size: 2em;
   font-weight: bold;
   color: #a569bd;
-  animation: slideIn 2s;
+  animation: slideIn 3s;
 }
 
 .subtitle {
@@ -29,7 +29,7 @@
 .image-section {
   flex: 1;
   text-align: center;
-  animation: zoomIn 4s;
+  animation: zoomIn 5s;
   margin-top: -40px; /* Move the image up */
 }
 
